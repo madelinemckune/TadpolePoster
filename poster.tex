@@ -1,0 +1,348 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Adapted from the template available at https://www.latextemplates.com/template/jacobs-landscape-poster
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+    \usepackage[scale=1.24]{beamerposter} % Use the beamerposter package for laying out the poster
+    
+    \usepackage{anyfontsize}
+    \usepackage{fontspec}
+    \usepackage[T1]{fontenc}
+    \DeclareTextCommand{\nobreakspace}{T1}{\leavevmode\nobreak\ }
+    \usepackage{setspace}
+    
+    \usetheme{confposter} % Use the confposter theme supplied with this template
+
+    % Many more colors are available for use in beamerthemeconfposter.sty
+    
+    %-----------------------------------------------------------
+    % Define the column widths and overall poster size
+    % To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+    % In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+    % onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+    % Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+    % Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+
+    \newlength{\sepwid}
+    \newlength{\onecolwid}
+    \newlength{\twocolwid}
+    \newlength{\threecolwid}
+    \setlength{\paperwidth}{48in} % A0 width: 46.8in
+    \setlength{\paperheight}{36in} % A0 height: 33.1in
+    \setlength{\sepwid}{0.024\paperwidth} % Separation width (white space) between columns
+    \setlength{\onecolwid}{0.22\paperwidth} % Width of one column
+    \setlength{\twocolwid}{0.464\paperwidth} % Width of two columns
+    \setlength{\threecolwid}{0.708\paperwidth} % Width of three columns
+    \setlength{\topmargin}{-0.5in} % Reduce the top margin size
+    %-----------------------------------------------------------
+    
+    \usepackage{graphicx}  % Required for including images
+    
+    \usepackage{booktabs} % Top and bottom rules for tables
+    
+    %----------------------------------------------------------------------------------------
+    %	TITLE SECTION 
+    %----------------------------------------------------------------------------------------
+    
+    \title{Poster Title \\[0.5in] on multiple lines} % Poster title
+    
+    \author{Name Advised by Dr. Hua Wang} % Author(s)
+    
+    \institute{Computer Science Department\\Colorado School of Mines} % Institution(s)
+    
+    %----------------------------------------------------------------------------------------
+    
+    \begin{document}
+    
+    \addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+    \addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+    
+    \setlength{\belowcaptionskip}{2ex} % White space under figures
+    \setlength\belowdisplayshortskip{2ex} % White space under equations
+    
+    \begin{frame}[t] % The whole poster is enclosed in one beamer frame
+    
+    \begin{columns}[t] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+    
+    \begin{column}{\sepwid}\end{column} % Empty spacer column
+    
+    \begin{column}{\onecolwid} % The first column
+    
+        %----------------------------------------------------------------------------------------
+        %	OBJECTIVES
+        %----------------------------------------------------------------------------------------
+        
+        % Optional starting image
+        % \begin{center}
+        %     \includegraphics[width=\linewidth]{images/placeholder.jpg}
+        % \end{center}
+
+        \begin{alertblock}{Overview}
+        
+            \textbf{Abstract goes here}. Veniam in mollit nulla anim proident sint magna. Aute aute nostrud adipisicing ut ullamco occaecat sit ullamco. Eiusmod consequat sunt ad culpa eu sit adipisicing aliquip labore duis minim occaecat sunt qui. Deserunt est ipsum ullamco ut Lorem quis adipisicing ut exercitation nisi eu.
+            Sint cupidatat commodo est sint est qui incididunt anim eiusmod Lorem duis. Mollit laboris in proident consequat duis aliqua. Excepteur id occaecat sit commodo eiusmod commodo qui nisi reprehenderit labore fugiat. Do laboris nisi esse Lorem ullamco ea aute minim adipisicing do nostrud nostrud ullamco officia. Aliquip eiusmod esse non ad id nostrud sint aute ullamco consequat amet veniam. Occaecat voluptate proident ipsum velit eu. Eiusmod laborum fugiat nostrud in eu do aliqua dolor consectetur et sint culpa tempor laborum.
+        
+        \end{alertblock}
+        
+        
+
+        %----------------------------------------------------------------------------------------
+        %	INTRODUCTION
+        %----------------------------------------------------------------------------------------
+        
+        \begin{block}{Title}
+        
+            Commodo exercitation ex nostrud ullamco elit cillum et est aliqua eu eu. Ut eu laborum tempor tempor eiusmod aute eu aute. Aute dolore nisi in sunt do enim tempor aliquip non consequat ut nisi consectetur pariatur. Ullamco sint ex enim aute tempor ad laborum nulla adipisicing dolore proident elit. Eu fugiat reprehenderit et pariatur id adipisicing anim minim veniam enim aliqua laborum. \\[0.3in]
+            
+
+            \begin{figure}
+                \includegraphics[width=0.8\textwidth,keepaspectratio]{images/placeholder.jpg}
+                \caption{Caption}
+            \end{figure}
+        
+        \end{block}
+        
+        %----------------------------------------------------------------------------------------
+    
+    \end{column} % End of the first column
+    
+    \begin{column}{\sepwid}\end{column} % Empty spacer column
+    
+    \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
+    
+        \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+        
+        \begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+        
+            %----------------------------------------------------------------------------------------
+            %	MATERIALS
+            %----------------------------------------------------------------------------------------
+            
+            \begin{block}{Title}
+            
+                Qui irure laborum anim mollit elit aliqua fugiat sit magna excepteur mollit voluptate et. Deserunt cillum minim laboris non excepteur amet dolor elit. 
+
+                \begin{columns}
+                    \begin{column}[t]{0.48\textwidth}
+                        \begin{center}
+                            \textbf{Subtitle 1} \\[0.3in]
+                            \includegraphics[width=\textwidth,height=.7\textheight,keepaspectratio]{images/placeholder.jpg}
+                        \end{center}
+                    \end{column}
+                    \begin{column}[t]{0.48\textwidth} 
+                        \begin{center}
+                            \textbf{Subtitle 2} \\[0.3in]
+                            \includegraphics[width=\textwidth,height=.7\textheight,keepaspectratio]{images/placeholder.jpg}
+                        \end{center}
+                    \end{column}
+                \end{columns}
+            
+            \end{block}
+            
+            %----------------------------------------------------------------------------------------
+        
+        \end{column} % End of column 2.1
+        
+        \begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
+        
+            %----------------------------------------------------------------------------------------
+            %	METHODS
+            %----------------------------------------------------------------------------------------
+            
+            \begin{block}{Title}
+            
+            Nulla ea minim adipisicing sunt velit nulla consequat anim sint cillum consequat incididunt dolore. \\[0.2in]
+
+            \begin{figure}
+                \includegraphics[width=0.4\textwidth,keepaspectratio]{images/placeholder.jpg}
+                \caption{Caption}
+            \end{figure}
+
+            \begin{figure}
+                \includegraphics[width=0.4\textwidth,keepaspectratio]{images/placeholder.jpg}
+                \caption{Caption}
+            \end{figure}
+            
+            \end{block}
+            
+            %----------------------------------------------------------------------------------------
+        
+        \end{column} % End of column 2.2
+    
+    \end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
+    
+    %----------------------------------------------------------------------------------------
+    %	IMPORTANT RESULT
+    %----------------------------------------------------------------------------------------
+    
+    \begin{alertblock}{Summary}
+    
+        Cupidatat laboris irure eiusmod ullamco cupidatat dolor dolor ad cupidatat. Ea nostrud dolore nostrud laboris et incididunt quis eiusmod nostrud magna eu. Dolor culpa ad nulla pariatur. Ipsum sunt in nulla ea anim anim nulla aliqua officia nostrud Lorem. Enim tempor anim aliqua consequat. Ipsum ut irure consequat mollit ipsum sint cupidatat cupidatat aliquip sit laboris. Pariatur quis occaecat laborum pariatur ipsum.
+    
+    \end{alertblock} 
+    
+    %----------------------------------------------------------------------------------------
+    
+    \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
+    
+        \begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
+        
+            %----------------------------------------------------------------------------------------
+            %	MATHEMATICAL SECTION
+            %----------------------------------------------------------------------------------------
+            
+            \begin{block}{Title}
+            
+                Amet eu do non officia veniam tempor qui velit incididunt aliqua consectetur. Proident est ullamco aliqua eiusmod eiusmod quis adipisicing Lorem irure tempor irure.
+            
+                \begin{figure}
+                    \includegraphics[width=0.5\linewidth]{images/placeholder.jpg}
+                    \caption{Caption}
+                \end{figure}
+
+            \end{block}
+            
+            %----------------------------------------------------------------------------------------
+        
+        \end{column} % End of column 2.1
+        
+        \begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
+        
+            %----------------------------------------------------------------------------------------
+            %	RESULTS
+            %----------------------------------------------------------------------------------------
+            
+            \begin{block}{Title}
+            
+                Pariatur nulla ut id sunt dolore esse magna sit irure enim. \\[0.2in]
+        
+                \begin{figure}
+                    \includegraphics[width=0.7\linewidth]{images/placeholder.jpg}
+                    \caption{Caption}
+                \end{figure}
+
+            \end{block}
+            
+            %----------------------------------------------------------------------------------------
+        
+        \end{column} % End of column 2.2
+    
+    \end{columns} % End of the split of column 2
+    
+    \end{column} % End of the second column
+    
+    \begin{column}{\sepwid}\end{column} % Empty spacer column
+    
+    \begin{column}{\onecolwid} % The third column
+    
+        %----------------------------------------------------------------------------------------
+        %	CONCLUSION
+        %----------------------------------------------------------------------------------------
+        
+        \begin{block}{Experiments}
+        
+            \textbf{Citation example \cite{Wang2012}.} Ullamco exercitation ut elit aliquip mollit aute laborum do nostrud commodo incididunt. Veniam deserunt proident cillum Lorem exercitation velit amet officia non Lorem qui. Eu reprehenderit Lorem reprehenderit commodo velit consequat ipsum do anim velit ullamco id commodo.
+
+            \begin{figure}
+                \includegraphics[width=0.8\linewidth]{images/placeholder.jpg}
+                \caption{My caption}
+            \end{figure}
+        
+        \end{block}
+
+
+        \begin{block}{Title}
+        
+            Proident aute esse reprehenderit incididunt ea minim elit deserunt.
+
+            \begin{itemize}
+                \item Item 1
+                \item Item 2
+                \item Item 3
+                \item Item 4
+            \end{itemize}
+
+        \end{block}
+        
+        % %----------------------------------------------------------------------------------------
+        % %	ADDITIONAL INFORMATION
+        % %----------------------------------------------------------------------------------------
+        
+        % \begin{block}{Additional Information}
+        
+        % Maecenas ultricies feugiat velit non mattis. Fusce tempus arcu id ligula varius dictum. 
+        % \begin{itemize}
+        % \item Curabitur pellentesque dignissim
+        % \item Eu facilisis est tempus quis
+        % \item Duis porta consequat lorem
+        % \end{itemize}
+        
+        % \end{block}
+        
+        %----------------------------------------------------------------------------------------
+        %	REFERENCES
+        %----------------------------------------------------------------------------------------
+        
+        \begin{block}{References}
+        
+        % \nocite{*} % Insert publications even if they are not cited in the poster
+        {
+            \bibliographystyle{IEEEtran}
+            \small
+            \bibliography{references}\vspace{0.2in}
+        }
+        
+        \end{block}
+        
+        % %----------------------------------------------------------------------------------------
+        % %	ACKNOWLEDGEMENTS
+        % %----------------------------------------------------------------------------------------
+        
+        % \setbeamercolor{block title}{fg=red,bg=white} % Change the block title color
+        
+        % \begin{block}{Acknowledgements}
+        
+        % \small{\rmfamily{Nam mollis tristique neque eu luctus. Suspendisse rutrum congue nisi sed convallis. Aenean id neque dolor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas.}} \\
+        
+        % \end{block}
+        
+        % %----------------------------------------------------------------------------------------
+        % %	CONTACT INFORMATION
+        % %----------------------------------------------------------------------------------------
+        
+        % \setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+        % \setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+        
+        % \begin{alertblock}{Contact Information}
+        
+        %     \begin{itemize}
+        %     \item Web: \href{http://www.university.edu/smithlab}{http://www.university.edu/smithlab}
+        %     \item Email: \href{mailto:john@smith.com}{john@smith.com}
+        %     \item Phone: +1 (000) 111 1111
+        %     \end{itemize}
+        
+        % \end{alertblock}
+        
+        \begin{center}
+            \begin{tabular}{ccc}
+            % \includegraphics[width=0.4\linewidth]{images/mines-logo.png} & \hfill & \includegraphics[width=0.4\linewidth]{images/mines-logo.png}
+            \includegraphics[width=0.5\linewidth]{images/logoTransparent.png}
+            \end{tabular}
+        \end{center}
+        
+        %----------------------------------------------------------------------------------------
+    
+    \end{column} % End of the third column
+    
+    \end{columns} % End of all the columns in the poster
+    
+    \end{frame} % End of the enclosing frame
+    
+\end{document}
+    
