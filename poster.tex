@@ -21,14 +21,13 @@
 
     % Many more colors are available for use in beamerthemeconfposter.sty
     
-    %-----------------------------------------------------------
     % Define the column widths and overall poster size
     % To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
     % In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
     % onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
     % Set twocolwid to be (2*onecolwid)+sepwid = 0.464
     % Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
-
+    
     \newlength{\sepwid}
     \newlength{\onecolwid}
     \newlength{\twocolwid}
@@ -50,9 +49,9 @@
     %	TITLE SECTION 
     %----------------------------------------------------------------------------------------
     
-    \title{Poster Title \\[0.5in] on multiple lines} % Poster title
+    \title{Effective Visualization of Sparse Machine Learning Results Applied to Brain Imaging Modalities Derived from the TADPOLE Challenge \\[0.5in]} % Poster title
     
-    \author{Name Advised by Dr. Hua Wang} % Author(s)
+    \author{Zoe Baker \& Madeline McKune  Advised by Dr. Hua Wang \& Lodewijk Brand} % Author(s)
     
     \institute{Computer Science Department\\Colorado School of Mines} % Institution(s)
     
@@ -75,7 +74,7 @@
     \begin{column}{\onecolwid} % The first column
     
         %----------------------------------------------------------------------------------------
-        %	OBJECTIVES
+        %	MOTIVATION
         %----------------------------------------------------------------------------------------
         
         % Optional starting image
@@ -83,30 +82,34 @@
         %     \includegraphics[width=\linewidth]{images/placeholder.jpg}
         % \end{center}
 
-        \begin{alertblock}{Overview}
+        \begin{alertblock}{Motivation}
         
-            \textbf{Abstract goes here}. Veniam in mollit nulla anim proident sint magna. Aute aute nostrud adipisicing ut ullamco occaecat sit ullamco. Eiusmod consequat sunt ad culpa eu sit adipisicing aliquip labore duis minim occaecat sunt qui. Deserunt est ipsum ullamco ut Lorem quis adipisicing ut exercitation nisi eu.
-            Sint cupidatat commodo est sint est qui incididunt anim eiusmod Lorem duis. Mollit laboris in proident consequat duis aliqua. Excepteur id occaecat sit commodo eiusmod commodo qui nisi reprehenderit labore fugiat. Do laboris nisi esse Lorem ullamco ea aute minim adipisicing do nostrud nostrud ullamco officia. Aliquip eiusmod esse non ad id nostrud sint aute ullamco consequat amet veniam. Occaecat voluptate proident ipsum velit eu. Eiusmod laborum fugiat nostrud in eu do aliqua dolor consectetur et sint culpa tempor laborum.
+            \textbf{MRI and PET scans are commonly used for diagnosing Alzheimer’s disease (AD) because they are non-invasive and widely available}. These scans can show brain atrophies that are solidly linked to cognitive decline and help physicians make an accurate diagnosis. Researchers run machine learning algorithms on MRI and PET scans to isolate regions of interest (ROI) in the brain most associated with an Alzheimer’s disease diagnosis. Taking this brain data and effectively visualizing it is important for interpreting results and seeing if machine learning results contradict or confirm prior medical understanding. Visualizations also bridge the gap between the medical communities and the public by making the data easier to understand. For example, hearing that a region of the brain is affected vs seeing that region, or related regions of the brain, is “lit up”. Brain visualizations allow for quick and effective communication of the results of machine learning algorithms.
+            \vspace{1cm}
+            \begin{figure}
+                \includegraphics[width=1.0\textwidth,keepaspectratio]{images/alzRate.PNG}
+                \caption{Age-Adjusted Death Rates for Alzheimer's Disease: United States 2000 and 2010}\label{imageLabel}
+           \end{figure}
         
         \end{alertblock}
         
         
 
         %----------------------------------------------------------------------------------------
-        %	INTRODUCTION
+        %	METHODS
         %----------------------------------------------------------------------------------------
         
-        \begin{block}{Title}
-        
-            Commodo exercitation ex nostrud ullamco elit cillum et est aliqua eu eu. Ut eu laborum tempor tempor eiusmod aute eu aute. Aute dolore nisi in sunt do enim tempor aliquip non consequat ut nisi consectetur pariatur. Ullamco sint ex enim aute tempor ad laborum nulla adipisicing dolore proident elit. Eu fugiat reprehenderit et pariatur id adipisicing anim minim veniam enim aliqua laborum. \\[0.3in]
+       % \begin{block}{Title}
+        %
+         %   Commodo exercitation ex nostrud ullamco elit cillum et est aliqua eu eu. Ut eu laborum tempor tempor eiusmod aute eu aute. Aute dolore nisi in sunt do enim tempor aliquip non consequat ut nisi consectetur pariatur. Ullamco sint ex enim aute tempor ad laborum nulla adipisicing dolore proident elit. Eu fugiat reprehenderit et pariatur id adipisicing anim minim veniam enim aliqua laborum. \\[0.3in]
             
 
-            \begin{figure}
-                \includegraphics[width=0.8\textwidth,keepaspectratio]{images/placeholder.jpg}
-                \caption{Caption}
-            \end{figure}
+          %  \begin{figure}
+           %     \includegraphics[width=0.8\textwidth,keepaspectratio]{images/placeholder.jpg}
+            %    \caption{Caption}
+        %    \end{figure}
         
-        \end{block}
+    %    \end{block}
         
         %----------------------------------------------------------------------------------------
     
@@ -116,96 +119,53 @@
     
     \begin{column}{\twocolwid} % Begin a column which is two columns wide (column 2)
     
-        \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column
+       \begin{alertblock}{Methods}
         
-        \begin{column}{\onecolwid}\vspace{-.6in} % The first column within column 2 (column 2.1)
+            \textbf{The Nilearn module requires a brain atlas and a weight matrix to plot brain imaging data.} A brain atlas is set of coordinates that define a region in the brain correlated with a certain function: speech, movement, memory, etc. The ROIs from the TADPOLE dataset were fit so they correlated to a predefined Nilearn region. The ROI measurements were also normalized from 0-1, representing their weight or “intensity”. These weights were fed into Nilearn in the order of the brain atlas so that the ROIs are mapped with their corresponding intensity. The Glass Brain module from Nilearn represents white/yellow regions as low intensity and red/black regions as high intensity.   
+            \linebreak
+            \linebreak Potentially: A machine learning algorithm could be run on MRI and PET brain volume data, associating each ROI with a particular weight that corresponds to its correlation with an Alzheimer’s diagnosis. This w-vector could then be plotted on a brain to highlight the ROIs most important to consider when making an Alzheimer’s diagnosis. 
+        \end{alertblock}
         
-            %----------------------------------------------------------------------------------------
-            %	MATERIALS
-            %----------------------------------------------------------------------------------------
-            
-            \begin{block}{Title}
-            
-                Qui irure laborum anim mollit elit aliqua fugiat sit magna excepteur mollit voluptate et. Deserunt cillum minim laboris non excepteur amet dolor elit. 
+    %    \begin{block}{Title}
+        
+     %       Potentially: A machine learning algorithm could be run on MRI and PET brain volume data, associating each ROI with a particular weight that corresponds to its correlation with an Alzheimer’s diagnosis. This w-vector could then be plotted on a brain to highlight the ROIs most important to consider when making an Alzheimer’s diagnosis. 
 
-                \begin{columns}
-                    \begin{column}[t]{0.48\textwidth}
-                        \begin{center}
-                            \textbf{Subtitle 1} \\[0.3in]
-                            \includegraphics[width=\textwidth,height=.7\textheight,keepaspectratio]{images/placeholder.jpg}
-                        \end{center}
-                    \end{column}
-                    \begin{column}[t]{0.48\textwidth} 
-                        \begin{center}
-                            \textbf{Subtitle 2} \\[0.3in]
-                            \includegraphics[width=\textwidth,height=.7\textheight,keepaspectratio]{images/placeholder.jpg}
-                        \end{center}
-                    \end{column}
-                \end{columns}
-            
-            \end{block}
-            
-            %----------------------------------------------------------------------------------------
-        
-        \end{column} % End of column 2.1
-        
-        \begin{column}{\onecolwid}\vspace{-.6in} % The second column within column 2 (column 2.2)
-        
-            %----------------------------------------------------------------------------------------
-            %	METHODS
-            %----------------------------------------------------------------------------------------
-            
-            \begin{block}{Title}
-            
-            Nulla ea minim adipisicing sunt velit nulla consequat anim sint cillum consequat incididunt dolore. \\[0.2in]
+            %\begin{itemize}
+             %   \item Item 1
+              %  \item Item 2
+               % \item Item 3
+                %\item Item 4
+            %\end{itemize}
 
-            \begin{figure}
-                \includegraphics[width=0.4\textwidth,keepaspectratio]{images/placeholder.jpg}
-                \caption{Caption}
-            \end{figure}
+    %    \end{block}
 
-            \begin{figure}
-                \includegraphics[width=0.4\textwidth,keepaspectratio]{images/placeholder.jpg}
-                \caption{Caption}
-            \end{figure}
-            
-            \end{block}
-            
-            %----------------------------------------------------------------------------------------
-        
-        \end{column} % End of column 2.2
-    
-    \end{columns} % End of the split of column 2 - any content after this will now take up 2 columns width
-    
+
     %----------------------------------------------------------------------------------------
-    %	IMPORTANT RESULT
+    %	OUR IMAGES
     %----------------------------------------------------------------------------------------
-    
-    \begin{alertblock}{Summary}
-    
-        Cupidatat laboris irure eiusmod ullamco cupidatat dolor dolor ad cupidatat. Ea nostrud dolore nostrud laboris et incididunt quis eiusmod nostrud magna eu. Dolor culpa ad nulla pariatur. Ipsum sunt in nulla ea anim anim nulla aliqua officia nostrud Lorem. Enim tempor anim aliqua consequat. Ipsum ut irure consequat mollit ipsum sint cupidatat cupidatat aliquip sit laboris. Pariatur quis occaecat laborum pariatur ipsum.
-    
-    \end{alertblock} 
-    
-    %----------------------------------------------------------------------------------------
-    
+
     \begin{columns}[t,totalwidth=\twocolwid] % Split up the two columns wide column again
     
         \begin{column}{\onecolwid} % The first column within column 2 (column 2.1)
         
             %----------------------------------------------------------------------------------------
-            %	MATHEMATICAL SECTION
+            %	MRI
             %----------------------------------------------------------------------------------------
             
-            \begin{block}{Title}
+            \begin{block}{MRI}
+            %\begin{block}
+                    
+                %Description of MRI \\[0.1in]
             
-                Amet eu do non officia veniam tempor qui velit incididunt aliqua consectetur. Proident est ullamco aliqua eiusmod eiusmod quis adipisicing Lorem irure tempor irure.
-            
-                \begin{figure}
-                    \includegraphics[width=0.5\linewidth]{images/placeholder.jpg}
-                    \caption{Caption}
-                \end{figure}
-
+            \begin{figure}
+                    \includegraphics[width=1.0\linewidth]{images/exampleROI.png}
+                    \caption{Example of plotting a region of MRI ROIs}
+            \end{figure}\
+         
+            \begin{figure}
+                \includegraphics[width=1.0\linewidth]{images/hippo.png}
+                \caption{Example of plotting the Left Hippocampus}
+            \end{figure}
             \end{block}
             
             %----------------------------------------------------------------------------------------
@@ -215,16 +175,17 @@
         \begin{column}{\onecolwid} % The second column within column 2 (column 2.2)
         
             %----------------------------------------------------------------------------------------
-            %	RESULTS
+            %	PET
             %----------------------------------------------------------------------------------------
             
-            \begin{block}{Title}
+            \begin{block}{PET}
+            %\begin{block}
             
-                Pariatur nulla ut id sunt dolore esse magna sit irure enim. \\[0.2in]
-        
+                %Description of PET \\[0.1in]
+                
                 \begin{figure}
-                    \includegraphics[width=0.7\linewidth]{images/placeholder.jpg}
-                    \caption{Caption}
+                    \includegraphics[width=1.0\linewidth]{images/petROI.png}
+                    \caption{Example of plotting a region of PET ROIs}
                 \end{figure}
 
             \end{block}
@@ -241,35 +202,17 @@
     
     \begin{column}{\onecolwid} % The third column
     
-        %----------------------------------------------------------------------------------------
-        %	CONCLUSION
-        %----------------------------------------------------------------------------------------
         
-        \begin{block}{Experiments}
-        
-            \textbf{Citation example \cite{Wang2012}.} Ullamco exercitation ut elit aliquip mollit aute laborum do nostrud commodo incididunt. Veniam deserunt proident cillum Lorem exercitation velit amet officia non Lorem qui. Eu reprehenderit Lorem reprehenderit commodo velit consequat ipsum do anim velit ullamco id commodo.
-
-            \begin{figure}
-                \includegraphics[width=0.8\linewidth]{images/placeholder.jpg}
-                \caption{My caption}
-            \end{figure}
-        
-        \end{block}
-
-
-        \begin{block}{Title}
-        
-            Proident aute esse reprehenderit incididunt ea minim elit deserunt.
-
-            \begin{itemize}
-                \item Item 1
-                \item Item 2
-                \item Item 3
-                \item Item 4
-            \end{itemize}
-
-        \end{block}
-        
+    %----------------------------------------------------------------------------------------
+    %	SUMMARY
+    %----------------------------------------------------------------------------------------
+    
+    \begin{alertblock}{Summary}
+    
+        Use of the Nilearn module for plotting brain imaging data can quickly and effectively show the results of a machine learning algorithm. With Nilearn, one can easily highlight general regions of importance and see if machine learning results contradict or confirm prior medical understanding.
+    
+    \end{alertblock} 
+    
         % %----------------------------------------------------------------------------------------
         % %	ADDITIONAL INFORMATION
         % %----------------------------------------------------------------------------------------
@@ -296,6 +239,16 @@
             \bibliographystyle{IEEEtran}
             \small
             \bibliography{references}\vspace{0.2in}
+            \linebreak ``Alzheimer's and Dementia.'' Alzheimer's Association, Alzheimer's Association, www.alz.org/alzheimer\_s\_dementia.
+            \linebreak
+            \linebreak Abraham A, Pedregosa F, Eickenberg M, Gervais P, Mueller A, Kossaifi J, Gramfort A, Thirion B and Varoquaux G (2014) Machine learning for neuroimaging with scikit-learn. Front. Neuroinform. 8:14. doi: 10.3389/fninf.2014.00014
+            \linebreak
+            \linebreak TADPOLE Challenge: Prediction of Longitudinal Evolution in Alzheimer's Disease, Razvan V. Marinescu, Neil P. Oxtoby, Alexandra L. Young, Esther E. Bron, Arthur W. Toga, Michael W. Weiner, Frederik Barkhof, Nick C. Fox, Stefan Klein, Daniel C. Alexander, the EuroPOND Consortium, arXiv:1805.03909, 2018
+            \linebreak
+            \linebreak Varghese T, Sheelakumari R, James JS, Mathuranath P. A review of neuroimaging biomarkers of Alzheimer's disease. Neurol Asia. 2013;18(3):239-248.
+            
+           
+            
         }
         
         \end{block}
@@ -342,7 +295,7 @@
     
     \end{columns} % End of all the columns in the poster
     
-    \end{frame} % End of the enclosing frame
+    \end{frame}  % End of the enclosing frame
     
 \end{document}
     
