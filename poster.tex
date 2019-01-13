@@ -85,11 +85,13 @@
         \begin{alertblock}{Motivation}
         
             \textbf{MRI and PET scans are commonly used for diagnosing Alzheimer’s disease (AD) because they are non-invasive and widely available}. These scans can show brain atrophies that are solidly linked to cognitive decline and help physicians make an accurate diagnosis. Researchers run machine learning algorithms on MRI and PET scans to isolate regions of interest (ROI) in the brain most associated with an Alzheimer’s disease diagnosis. Taking this brain data and effectively visualizing it is important for interpreting results and seeing if machine learning results contradict or confirm prior medical understanding. Visualizations also bridge the gap between the medical communities and the public by making the data easier to understand. For example, hearing that a region of the brain is affected vs seeing that region, or related regions of the brain, is “lit up”. Brain visualizations allow for quick and effective communication of the results of machine learning algorithms.
-            \vspace{1cm}
+            \vspace{2cm}
             \begin{figure}
                 \includegraphics[width=1.0\textwidth,keepaspectratio]{images/alzRate.PNG}
+                \vspace{1cm}
                 \caption{Age-Adjusted Death Rates for Alzheimer's Disease: United States 2000 and 2010}\label{imageLabel}
            \end{figure}
+           \vspace{1cm}
         
         \end{alertblock}
         
@@ -121,7 +123,7 @@
     
        \begin{alertblock}{Methods}
         
-            \textbf{The Nilearn module requires a brain atlas and a weight matrix to plot brain imaging data.} A brain atlas is set of coordinates that define a region in the brain correlated with a certain function: speech, movement, memory, etc. The ROIs from the TADPOLE dataset were fit so they correlated to a predefined Nilearn region. The ROI measurements were also normalized from 0-1, representing their weight or “intensity”. These weights were fed into Nilearn in the order of the brain atlas so that the ROIs are mapped with their corresponding intensity. The Glass Brain module from Nilearn represents white/yellow regions as low intensity and red/black regions as high intensity.   
+            \textbf{The Nilearn module requires a brain atlas and a weight matrix to plot brain imaging data.} A brain atlas is set of coordinates that define a region in the brain correlated with a certain function: speech, movement, memory, etc. The ROIs from the TADPOLE dataset were fit so they correlated to a predefined Nilearn region with the help of built-in Nilearn functions. Then the calculated multivariate linear regression (XW=y) for a specific ROI can be matched to an atlas.The ROI measurements are normalized from 0-1, representing their weight or “intensity”. These weights were fed into Nilearn in the order of the brain atlas so that the ROIs are mapped with their corresponding intensity. The Glass Brain module from Nilearn represents white/yellow regions as low intensity and red/black regions as high intensity.   
             \linebreak
             \linebreak Potentially: A machine learning algorithm could be run on MRI and PET brain volume data, associating each ROI with a particular weight that corresponds to its correlation with an Alzheimer’s diagnosis. This w-vector could then be plotted on a brain to highlight the ROIs most important to consider when making an Alzheimer’s diagnosis. 
         \end{alertblock}
@@ -206,7 +208,12 @@
     
     \begin{column}{\onecolwid} % The third column
     
-        
+    %---------------------------------------------------------------------------------------
+    % METHODS IMAGE
+    %------------------------------------------------------------------------------------------
+     \begin{figure}
+        \includegraphics[width=1.0\linewidth]{images/mult.JPG}
+    \end{figure}
     %----------------------------------------------------------------------------------------
     %	SUMMARY
     %----------------------------------------------------------------------------------------
@@ -241,17 +248,17 @@
         % \nocite{*} % Insert publications even if they are not cited in the poster
         {
             \bibliographystyle{IEEEtran}
-            \small
-            \bibliography{references}\vspace{0.2in}
-            \linebreak ``Alzheimer's and Dementia.'' Alzheimer's Association, Alzheimer's Association, www.alz.org/alzheimer\_s\_dementia.
+            \scriptsize
+            \bibliography{references}\vspace{0.1in}
             \linebreak
             \linebreak Abraham A, Pedregosa F, Eickenberg M, Gervais P, Mueller A, Kossaifi J, Gramfort A, Thirion B and Varoquaux G (2014) Machine learning for neuroimaging with scikit-learn. Front. Neuroinform. 8:14. doi: 10.3389/fninf.2014.00014
+            \linebreak
+            \linebreak Brand L. et al. (2018) Joint High-Order Multi-Task Feature Learning to Predict the Progression of Alzheimer’s Disease. In: Frangi A., Schnabel J., Davatzikos C., Alberola-López C., Fichtinger G. (eds) Medical Image Computing and Computer Assisted Intervention – MICCAI 2018. MICCAI 2018. Lecture Notes in Computer Science, vol 11070. Springer, Cham
             \linebreak
             \linebreak TADPOLE Challenge: Prediction of Longitudinal Evolution in Alzheimer's Disease, Razvan V. Marinescu, Neil P. Oxtoby, Alexandra L. Young, Esther E. Bron, Arthur W. Toga, Michael W. Weiner, Frederik Barkhof, Nick C. Fox, Stefan Klein, Daniel C. Alexander, the EuroPOND Consortium, arXiv:1805.03909, 2018
             \linebreak
             \linebreak Varghese T, Sheelakumari R, James JS, Mathuranath P. A review of neuroimaging biomarkers of Alzheimer's disease. Neurol Asia. 2013;18(3):239-248.
             
-           \vspace{2cm}
             
         }
         
@@ -289,7 +296,7 @@
         \begin{center}
             \begin{tabular}{ccc}
             % \includegraphics[width=0.4\linewidth]{images/mines-logo.png} & \hfill & \includegraphics[width=0.4\linewidth]{images/mines-logo.png}
-            \includegraphics[width=0.5\linewidth]{images/logoTransparent.png}
+            \includegraphics[width=0.3\linewidth]{images/logoTransparent.png}
             \end{tabular}
         \end{center}
         
